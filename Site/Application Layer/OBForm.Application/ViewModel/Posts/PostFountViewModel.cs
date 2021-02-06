@@ -13,9 +13,5 @@ namespace OBFormPost.Application.ViewModel
         public string Status { get; private set; }
         public DateTime PostDateTime { get; set; }
         public string Title { get; private set; }
-        //public static CreateFromPost(Post post)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

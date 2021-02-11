@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Npgsql" Version="5.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructure Layer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj" />
     <ProjectReference Include="..\..\Application Layer\OBForm.Application\OBFormPost.Application.csproj" />
   </ItemGroup>
 

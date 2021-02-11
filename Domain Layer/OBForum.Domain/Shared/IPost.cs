@@ -6,6 +6,7 @@ namespace OBForumPost.Domain.Shared
     {
         long Id { get; }
         DateTimeOffset PostedDateTime { get; }
+        DateTimeOffset UpdatedDateTime { get; }
         PostStatus PostStatus { get; }
         string Title { get; }
         Author Author { get; }

@@ -6,7 +6,7 @@ namespace OBForumPost.Domain.Shared
 {
     public sealed class Author
     {
-        public string Id { get; private set; }
-        public string Name { get; private set; }
+        public int Id { get; init; }
+        public string Name { get; init; }
     }
 }

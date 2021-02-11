@@ -8,10 +8,11 @@ namespace OBForumPost.Domain.Posts
     /// </summary>
     public sealed class Post : IPost, IAggregateRoot
     {
-        public long Id { get; private set; }
-        public DateTimeOffset PostedDateTime { get; private set; }
-        public PostStatus PostStatus { get; private set; }
-        public string Title { get; private set; }
-        public Author Author { get; private set; }
+        public long Id { get; init; }
+        public DateTimeOffset PostedDateTime { get; init; }
+        public DateTimeOffset UpdatedDateTime { get; init; }
+        public PostStatus PostStatus { get; init; }
+        public string Title { get; init; }
+        public Author Author { get; init; }
     }
 }

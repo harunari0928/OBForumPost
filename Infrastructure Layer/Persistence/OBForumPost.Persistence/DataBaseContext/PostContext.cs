@@ -10,7 +10,7 @@ namespace OBForumPost.Persistence.DataBaseContext
 {
     public sealed class PostContext : DbContext
     {
-        public DbSet<PostStoredDb> Posts { get; set; }
+        public DbSet<PostEntity> Posts { get; set; }
 
         public PostContext() { }
 
@@ -49,7 +49,7 @@ namespace OBForumPost.Persistence.DataBaseContext
             }
         }
 
-        internal IOrderedQueryable<PostStoredDb> GetOrderedPostsQuery(OrderByOptions orderByOption) => orderByOption switch
+        internal IOrderedQueryable<PostEntity> GetOrderedPostsQuery(OrderByOptions orderByOption) => orderByOption switch
         {
             OrderByOptions.None => Posts.OrderBy(x => x.PostId),
             OrderByOptions.PostedDateTimeAsc => Posts.OrderBy(x => x.PostedDateTime),
@@ -60,7 +60,7 @@ namespace OBForumPost.Persistence.DataBaseContext
         };
     }
 
-    public sealed class PostStoredDb
+    public sealed class PostEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

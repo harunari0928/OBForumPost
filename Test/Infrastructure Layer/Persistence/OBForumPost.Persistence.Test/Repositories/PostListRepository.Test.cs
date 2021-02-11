@@ -23,7 +23,7 @@ namespace OBForumPost.Persistence.Test.Repositories
             Seed();
         }
 
-        protected IReadOnlyList<PostStoredDb> DummyData { get; private set; }
+        protected IReadOnlyList<PostEntity> DummyData { get; private set; }
 
         protected DbContextOptions<PostContext> ContextOptions { get; }
 
@@ -39,9 +39,9 @@ namespace OBForumPost.Persistence.Test.Repositories
             context.SaveChanges();
         }
 
-        private static IEnumerable<PostStoredDb> GetDummyPostData()
+        private static IEnumerable<PostEntity> GetDummyPostData()
         {
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2019/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2020/2/24 13:00:00 +9:00"),
@@ -49,7 +49,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test1",
                 AuthorId = 4
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2014/10/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2015/3/6 13:00:00 +9:00"),
@@ -57,7 +57,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test2",
                 AuthorId = 4
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2013/12/23 4:50:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2017/2/24 21:30:00 +9:00"),
@@ -65,7 +65,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test3",
                 AuthorId = 10
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2004/4/4 4:44:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2006/9/24 9:30:00 +9:00"),
@@ -73,7 +73,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test4",
                 AuthorId = 11
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2041/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2055/2/24 15:30:00 +9:00"),
@@ -81,7 +81,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test5",
                 AuthorId = 12
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2016/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2017/2/24 15:30:00 +9:00"),
@@ -89,7 +89,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test6",
                 AuthorId = 13
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2018/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2021/2/24 15:30:00 +9:00"),
@@ -97,7 +97,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test7",
                 AuthorId = 10
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2021/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2022/2/24 15:30:00 +9:00"),
@@ -105,7 +105,7 @@ namespace OBForumPost.Persistence.Test.Repositories
                 Title = "test8",
                 AuthorId = 10
             };
-            yield return new PostStoredDb
+            yield return new PostEntity
             {
                 PostedDateTime = DateTimeOffset.Parse("2023/7/21 5:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2024/5/5 5:14:00 +9:00"),

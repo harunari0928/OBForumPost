@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPostAPI", "Site\Pres
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C2D13BFF-89BB-4FA0-BCAF-7C2C7C4E103C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBForumPost.Domain.Test", "Test\Domain Layer\OBForumPost.Domain.Test\OBForumPost.Domain.Test.csproj", "{23CA4222-F131-4C56-9748-AD079ADB235A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Domain.Test", "Test\Domain Layer\OBForumPost.Domain.Test\OBForumPost.Domain.Test.csproj", "{23CA4222-F131-4C56-9748-AD079ADB235A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Layer", "Domain Layer", "{55E78A2E-3F65-4906-9F9D-A65CE550BF6F}"
 EndProject
@@ -27,7 +27,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{36B33CFE-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Layer", "Application Layer", "{C4306396-D352-41BF-86D4-42CEEE5C94ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBFormPost.Application.Test", "Test\Site\Application Layer\OBFormPost.Application.Test\OBFormPost.Application.Test.csproj", "{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBFormPost.Application.Test", "Test\Site\Application Layer\OBFormPost.Application.Test\OBFormPost.Application.Test.csproj", "{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Layer", "Infrastructure Layer", "{70E33BBD-8F4E-4F07-8DCF-47088BF0FF9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{47613409-7AEA-4FB1-AFB9-C93694189B66}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Persistence", "Infrastructure Layer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj", "{5D524846-A2EE-4BA7-94C0-314A36001F25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A6140E0-ACB6-4B8A-A65A-A5A7532AE402}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Layer", "Infrastructure Layer", "{344AAC59-7ACF-4DAC-A5CC-E55AD85C4CC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{03F588D8-6D7A-450B-849E-741BB5388B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBForumPost.Persistence.Test", "Test\Infrastructure Layer\Persistence\OBForumPost.Persistence.Test\OBForumPost.Persistence.Test.csproj", "{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +72,14 @@ Global
 		{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D524846-A2EE-4BA7-94C0-314A36001F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D524846-A2EE-4BA7-94C0-314A36001F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D524846-A2EE-4BA7-94C0-314A36001F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D524846-A2EE-4BA7-94C0-314A36001F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +95,11 @@ Global
 		{36B33CFE-B5DB-4689-A593-831D18D5F7C0} = {C2D13BFF-89BB-4FA0-BCAF-7C2C7C4E103C}
 		{C4306396-D352-41BF-86D4-42CEEE5C94ED} = {36B33CFE-B5DB-4689-A593-831D18D5F7C0}
 		{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF} = {C4306396-D352-41BF-86D4-42CEEE5C94ED}
+		{47613409-7AEA-4FB1-AFB9-C93694189B66} = {70E33BBD-8F4E-4F07-8DCF-47088BF0FF9E}
+		{5D524846-A2EE-4BA7-94C0-314A36001F25} = {47613409-7AEA-4FB1-AFB9-C93694189B66}
+		{344AAC59-7ACF-4DAC-A5CC-E55AD85C4CC0} = {C2D13BFF-89BB-4FA0-BCAF-7C2C7C4E103C}
+		{03F588D8-6D7A-450B-849E-741BB5388B7D} = {344AAC59-7ACF-4DAC-A5CC-E55AD85C4CC0}
+		{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C} = {03F588D8-6D7A-450B-849E-741BB5388B7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CFD86643-4A07-4557-8E5D-76CFC10C966D}

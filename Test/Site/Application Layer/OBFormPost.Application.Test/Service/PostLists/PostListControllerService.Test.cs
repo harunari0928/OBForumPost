@@ -1,15 +1,13 @@
 ﻿using Moq;
 using OBFormPost.Application.Service.PostList;
+using OBFormPost.Application.ViewModel;
 using OBForumPost.Domain.PostLists;
 using OBForumPost.Domain.Repository;
+using OBForumPost.Domain.Shared;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
-using OBFormPost.Application.ViewModel;
-using OBForumPost.Domain.Shared;
 
 namespace OBFormPost.Application.Test.Service.PostLists
 {
@@ -51,7 +49,7 @@ namespace OBFormPost.Application.Test.Service.PostLists
                 });
                 var repositoryMock = new Mock<IPostListRepository>();
                 repositoryMock
-                    .Setup(x => x.Get(page, pageSize))
+                    .Setup(x => x.Get(page, pageSize, OrderByOptions.None))
                     .ReturnsAsync(postList);
                 var applicationServce = new PostListControllerService(repositoryMock.Object);
                 var expectedList = (await applicationServce.Get(page, pageSize)).OrderBy(x => x.Id);

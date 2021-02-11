@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OBForumPost.Domain.Repository
+﻿namespace OBForumPost.Domain.Repository
 {
     public interface IPostRepository
     {

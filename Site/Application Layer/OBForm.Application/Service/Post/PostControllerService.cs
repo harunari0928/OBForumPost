@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace OBFormPost.Application.Service.Post
 {
-    public sealed class PostControllerService
+    public sealed class PostControllerService : IPostControllerService
     {
-        public Task<PostFountViewModel> GetPost(long postId)
+        public Task<PostFountViewModel> Get(long postId)
         {
             throw new NotImplementedException();
         }

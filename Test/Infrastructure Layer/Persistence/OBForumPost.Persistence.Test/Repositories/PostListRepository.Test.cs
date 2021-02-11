@@ -552,6 +552,10 @@ namespace OBForumPost.Persistence.Test.Repositories
             return connection;
         }
 
-        public void Dispose() => connection.Dispose();
+        public void Dispose()
+        {
+            connection.Dispose();
+            GC.SuppressFinalize(this);
+        }
     }
 }

@@ -44,10 +44,16 @@ namespace OBForumPost.Persistence.Test.Repositories
                 var repository = new PostRepository(context);
 
                 var actual = await repository.Get(1);
+                if (actual is null)
+                {
+                    throw new Exception("期待した投稿を取得できませんでした");
+                }
+
                 Assert.Equal(dummyData.PostId, actual.Id);
                 Assert.Equal(dummyData.PostedDateTime, actual.PostedDateTime);
                 Assert.Equal(dummyData.UpdatedDateTime, actual.UpdatedDateTime);
                 Assert.Equal(dummyData.Title, actual.Title);
+                Assert.Equal(dummyData.AuthorId, actual.Author.Id);
             }
 
             [Fact]
@@ -196,6 +202,11 @@ namespace OBForumPost.Persistence.Test.Repositories
                 var repository = new PostRepository(context);
 
                 var postBeforeUpdate = await repository.Get(dummyData[2].PostId);
+                if (postBeforeUpdate is null)
+                {
+                    throw new Exception("期待した投稿を取得できませんでした");
+                }
+
                 var updateRequest = new Post
                 {
                     Id = postBeforeUpdate.Id,
@@ -226,6 +237,11 @@ namespace OBForumPost.Persistence.Test.Repositories
                 var repository = new PostRepository(context);
 
                 var postBeforeUpdate = await repository.Get(dummyData[2].PostId);
+                if (postBeforeUpdate is null)
+                {
+                    throw new Exception("期待した投稿を取得できませんでした");
+                }
+
                 var updateRequest = new Post
                 {
                     Id = postBeforeUpdate.Id,

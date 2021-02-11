@@ -56,7 +56,7 @@ namespace OBForumPost.Persistence.Repositories
             };
         }
 
-        public async Task<Post> Get(long id)
+        public async Task<Post?> Get(long id)
         {
             if (id < 1)
             {
@@ -71,7 +71,10 @@ namespace OBForumPost.Persistence.Repositories
                 UpdatedDateTime = singleDataRow.UpdatedDateTime,
                 PostStatus = (Domain.Shared.PostStatus)singleDataRow.PostStatus,
                 Title = singleDataRow.Title,
-                Author = new Domain.Shared.Author()
+                Author = new Domain.Shared.Author
+                {
+                    Id = singleDataRow.AuthorId
+                }
             };
         }
 

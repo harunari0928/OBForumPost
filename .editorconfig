@@ -2,3 +2,12 @@
 
 # CS8618: null 非許容のフィールドには、コンストラクターの終了時に null 以外の値が入っていなければなりません。Null 許容として宣言することをご検討ください。
 dotnet_diagnostic.CS8618.severity = none
+
+# CS8600: Null リテラルまたは Null の可能性がある値を Null 非許容型に変換しています。
+dotnet_diagnostic.CS8600.severity = error
+
+# IDE0058: 式の値が使用されていません
+dotnet_diagnostic.IDE0058.severity = silent
+
+# CS8625: null リテラルを null 非許容参照型に変換できません。
+dotnet_diagnostic.CS8625.severity = error

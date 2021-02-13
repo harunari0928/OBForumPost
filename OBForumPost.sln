@@ -5,46 +5,46 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{93FA07C5-F6DD-4D86-8968-06AAAA61377A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Layer", "Application Layer", "{3E53606F-9037-46C3-BBFF-F5832F25FF5F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationLayer", "ApplicationLayer", "{3E53606F-9037-46C3-BBFF-F5832F25FF5F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{6BA14B4E-9627-4146-9003-A19D94C5199A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{6BA14B4E-9627-4146-9003-A19D94C5199A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBFormPost.Application", "Site\Application Layer\OBForm.Application\OBFormPost.Application.csproj", "{5E1CEF90-A4B8-4B03-A958-E0C1A7084148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBFormPost.Application", "Site\ApplicationLayer\OBForm.Application\OBFormPost.Application.csproj", "{5E1CEF90-A4B8-4B03-A958-E0C1A7084148}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Layer", "Domain Layer", "{1DD8516F-CF40-4201-8DC7-20FC5D3E9E6B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainLayer", "DomainLayer", "{1DD8516F-CF40-4201-8DC7-20FC5D3E9E6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Domain", "Domain Layer\OBForum.Domain\OBForumPost.Domain.csproj", "{7D7A82D5-BF75-4B6D-8426-F7057179A4C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Domain", "DomainLayer\OBForum.Domain\OBForumPost.Domain.csproj", "{7D7A82D5-BF75-4B6D-8426-F7057179A4C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPostAPI", "Site\Presentation Layer\OBForumPostAPI\OBForumPostAPI.csproj", "{AD862646-4771-4676-92C9-B1FA79E7F2E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPostAPI", "Site\PresentationLayer\OBForumPostAPI\OBForumPostAPI.csproj", "{AD862646-4771-4676-92C9-B1FA79E7F2E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C2D13BFF-89BB-4FA0-BCAF-7C2C7C4E103C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Domain.Test", "Test\Domain Layer\OBForumPost.Domain.Test\OBForumPost.Domain.Test.csproj", "{23CA4222-F131-4C56-9748-AD079ADB235A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Domain.Test", "Test\DomainLayer\OBForumPost.Domain.Test\OBForumPost.Domain.Test.csproj", "{23CA4222-F131-4C56-9748-AD079ADB235A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Layer", "Domain Layer", "{55E78A2E-3F65-4906-9F9D-A65CE550BF6F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainLayer", "DomainLayer", "{55E78A2E-3F65-4906-9F9D-A65CE550BF6F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{36B33CFE-B5DB-4689-A593-831D18D5F7C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Layer", "Application Layer", "{C4306396-D352-41BF-86D4-42CEEE5C94ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationLayer", "ApplicationLayer", "{C4306396-D352-41BF-86D4-42CEEE5C94ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBFormPost.Application.Test", "Test\Site\Application Layer\OBFormPost.Application.Test\OBFormPost.Application.Test.csproj", "{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBFormPost.Application.Test", "Test\Site\ApplicationLayer\OBFormPost.Application.Test\OBFormPost.Application.Test.csproj", "{33DFC0F5-1E3C-40EA-9B7B-66FFFFDAF9EF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Layer", "Infrastructure Layer", "{70E33BBD-8F4E-4F07-8DCF-47088BF0FF9E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureLayer", "InfrastructureLayer", "{70E33BBD-8F4E-4F07-8DCF-47088BF0FF9E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{47613409-7AEA-4FB1-AFB9-C93694189B66}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Persistence", "Infrastructure Layer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj", "{5D524846-A2EE-4BA7-94C0-314A36001F25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OBForumPost.Persistence", "InfrastructureLayer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj", "{5D524846-A2EE-4BA7-94C0-314A36001F25}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A6140E0-ACB6-4B8A-A65A-A5A7532AE402}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Layer", "Infrastructure Layer", "{344AAC59-7ACF-4DAC-A5CC-E55AD85C4CC0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InfrastructureLayer", "InfrastructureLayer", "{344AAC59-7ACF-4DAC-A5CC-E55AD85C4CC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{03F588D8-6D7A-450B-849E-741BB5388B7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBForumPost.Persistence.Test", "Test\Infrastructure Layer\Persistence\OBForumPost.Persistence.Test\OBForumPost.Persistence.Test.csproj", "{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBForumPost.Persistence.Test", "Test\InfrastructureLayer\Persistence\OBForumPost.Persistence.Test\OBForumPost.Persistence.Test.csproj", "{89D40B6B-1454-46AC-BF9B-B0A9CA5DAA8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

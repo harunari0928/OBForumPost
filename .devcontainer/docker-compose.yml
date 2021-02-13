@@ -1,0 +1,26 @@
+version: '3'
+services:
+  api:
+    build: 
+      context: ..
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ..:/src
+    command: dotnet run --project /src/Site/PresentationLayer/OBForumPostAPI/OBForumPostAPI.csproj --urls http://*:5000
+    ports:
+      - "5000:5000"
+    container_name: forum_post_api
+    environment: 
+      DB_SERVERNAME: forum_post_rdb
+      DB_USERID: postgres
+      DB_PORT: 5432
+      DB_PASSWORD: mysecretpassword
+    depends_on:
+      - rdb
+  rdb:
+    image: postgres:13.2
+    container_name: forum_post_rdb
+    environment: 
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"

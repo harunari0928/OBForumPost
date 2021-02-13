@@ -7,13 +7,13 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["Site/Presentation Layer/OBForumPostAPI/OBForumPostAPI.csproj", "Site/Presentation Layer/OBForumPostAPI/"]
-COPY ["Infrastructure Layer/Persistence/OBForumPost.Persistence/OBForumPost.Persistence.csproj", "Infrastructure Layer/Persistence/OBForumPost.Persistence/"]
-COPY ["Domain Layer/OBForum.Domain/OBForumPost.Domain.csproj", "Domain Layer/OBForum.Domain/"]
-COPY ["Site/Application Layer/OBForm.Application/OBFormPost.Application.csproj", "Site/Application Layer/OBForm.Application/"]
-RUN dotnet restore "Site/Presentation Layer/OBForumPostAPI/OBForumPostAPI.csproj"
+COPY ["Site/PresentationLayer/OBForumPostAPI/OBForumPostAPI.csproj", "Site/PresentationLayer/OBForumPostAPI/"]
+COPY ["InfrastructureLayer/Persistence/OBForumPost.Persistence/OBForumPost.Persistence.csproj", "InfrastructureLayer/Persistence/OBForumPost.Persistence/"]
+COPY ["DomainLayer/OBForum.Domain/OBForumPost.Domain.csproj", "DomainLayer/OBForum.Domain/"]
+COPY ["Site/ApplicationLayer/OBForm.Application/OBFormPost.Application.csproj", "Site/ApplicationLayer/OBForm.Application/"]
+RUN dotnet restore "Site/PresentationLayer/OBForumPostAPI/OBForumPostAPI.csproj"
 COPY . .
-WORKDIR "/src/Site/Presentation Layer/OBForumPostAPI"
+WORKDIR "/src/Site/PresentationLayer/OBForumPostAPI"
 RUN dotnet build "OBForumPostAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish

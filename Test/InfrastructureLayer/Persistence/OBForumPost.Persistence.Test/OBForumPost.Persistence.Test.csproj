@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Infrastructure Layer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj" />
+    <ProjectReference Include="..\..\..\..\InfrastructureLayer\Persistence\OBForumPost.Persistence\OBForumPost.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

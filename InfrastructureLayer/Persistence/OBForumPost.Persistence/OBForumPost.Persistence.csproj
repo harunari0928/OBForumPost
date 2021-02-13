@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Domain Layer\OBForum.Domain\OBForumPost.Domain.csproj" />
+    <ProjectReference Include="..\..\..\DomainLayer\OBForum.Domain\OBForumPost.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

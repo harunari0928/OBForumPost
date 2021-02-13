@@ -7,6 +7,7 @@ using OBFormPost.Application.Service;
 using OBFormPost.Application.Service.Post;
 using OBFormPost.Application.Service.PostList;
 using OBForumPost.Domain.Repository;
+using OBForumPost.Persistence.DataBaseContext;
 using OBForumPost.Persistence.Repositories;
 
 namespace OBForumAPI
@@ -23,8 +24,8 @@ namespace OBForumAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IPostListRepository, PostListRepository>();
-            services.AddSingleton<IPostRepository, PostRepository>();
+            services.AddSingleton<IPostListRepository>(new PostListRepository(new PostContext()));
+            services.AddSingleton<IPostRepository>(new PostRepository(new PostContext()));
             services.AddSingleton<IPostListControllerService, PostListControllerService>();
             services.AddSingleton<IPostControllerService, PostControllerService>();
             services.AddControllers();

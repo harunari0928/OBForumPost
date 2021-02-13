@@ -1,3 +1,5 @@
 {
-    "omnisharp.defaultLaunchSolution": "OBForumPost.sln"
+    "omnisharp.defaultLaunchSolution": "OBForumPost.sln",
+    "csharp.semanticHighlighting.enabled": true,
+    "editor.semanticHighlighting.enabled": true
 }

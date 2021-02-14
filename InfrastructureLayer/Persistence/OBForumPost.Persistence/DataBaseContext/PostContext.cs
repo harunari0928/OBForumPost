@@ -23,8 +23,11 @@ namespace OBForumPost.Persistence.DataBaseContext
             // コンストラクタよりDbContextOptions<PostContext>が注入されている場合はtrue
             if (options.IsConfigured) { return; }
 
-            // TODO: DB接続文字列は後で環境変数より読み込むように変更する
-            options.UseNpgsql("Server=localhost;Port=5432;Database=post;User Id=postgres;Password=mysecretpassword;");
+            var server = Environment.GetEnvironmentVariable("DB_SERVERNAME");
+            var userId = Environment.GetEnvironmentVariable("DB_USERID");
+            var port = Environment.GetEnvironmentVariable("DB_PORT");
+            var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            options.UseNpgsql($"Server={server};Port={port};Database=post;User Id={userId};Password={password};");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

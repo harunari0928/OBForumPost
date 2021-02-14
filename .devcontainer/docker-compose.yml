@@ -5,8 +5,8 @@ services:
       context: ..
       dockerfile: Dockerfile.dev
     volumes:
-      - ..:/src
-    command: dotnet run --project /src/Site/PresentationLayer/OBForumPostAPI/OBForumPostAPI.csproj --urls http://*:5000
+      - ..:/src:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "5000:5000"
     container_name: forum_post_api

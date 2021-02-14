@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OBFormPost.Application.Service;
 using OBFormPost.Application.ViewModel;
+using System;
 using System.Threading.Tasks;
 
 namespace OBForumPostAPI.Controllers
@@ -15,13 +16,20 @@ namespace OBForumPostAPI.Controllers
             this.postListControllerService = postListControllerService;
         }
 
+        [Route("{page}/{pageSize}")]
         [HttpGet]
-        public async Task<ActionResult<PostListViewModel>> Index()
+        public async Task<ActionResult<PostListViewModel>> Index(int page, int pageSize)
         {
             // TODO: 認証バリデーション
-
-            var list = await postListControllerService.Get(0, 0);
-            return Ok(list);
+            try
+            {
+                var list = await postListControllerService.Get(page, pageSize);
+                return Ok(list);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -13,9 +13,8 @@ namespace OBForumPost.Persistence.Migrations
                 columns: table => new
                 {
                     PostId = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                         .Annotation("Autoincrement", true)
-                        .Annotation("Npgsql:ValueGeneratedOnAdd", true),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     PostedDateTime = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     UpdatedDateTime = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     PostStatus = table.Column<int>(type: "integer", nullable: false),

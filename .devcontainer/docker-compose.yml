@@ -6,7 +6,8 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ..:/src:cached
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    command: /bin/sh -c "while sleep 1000; do :; done &&
+      dotnet ef database update --project /src/InfrastructureLayer/Persistence/OBForumPost.Persistence/OBForumPost.Persistence.csproj"
     ports:
       - "5000:5000"
     container_name: forum_post_api

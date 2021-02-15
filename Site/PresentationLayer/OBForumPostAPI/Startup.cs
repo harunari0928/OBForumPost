@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +29,11 @@ namespace OBForumAPI
             services.AddSingleton<IPostRepository>(new PostRepository(new PostContext()));
             services.AddSingleton<IPostListControllerService, PostListControllerService>();
             services.AddSingleton<IPostControllerService, PostControllerService>();
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.DictionaryKeyPolicy = JsonNamingPolicy.CamelCase;
+                options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+            });
             services.AddHealthChecks();
         }
 

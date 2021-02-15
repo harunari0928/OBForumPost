@@ -1,5 +1,7 @@
 {
     "omnisharp.defaultLaunchSolution": "OBForumPost.sln",
     "csharp.semanticHighlighting.enabled": true,
-    "editor.semanticHighlighting.enabled": true
+    "editor.semanticHighlighting.enabled": true,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "omnisharp.enableMsBuildLoadProjectsOnDemand": false
 }

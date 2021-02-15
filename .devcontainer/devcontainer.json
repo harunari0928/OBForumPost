@@ -11,7 +11,10 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-dotnettools.csharp"
+		"ms-dotnettools.csharp",
+		"eservice-online.vs-sharper",
+		"k--kato.docomment",
+		"fudge.auto-using"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

@@ -1,15 +1,15 @@
 ﻿using System;
-using OBForumPost.Domain.PostLists;
+using OBForumPost.Domain.Posts;
 using OBForumPost.Domain.Shared;
 
-namespace OBFormPost.Application.ViewModel.PostLists
+namespace OBFormPost.Application.ViewModel.Posts
 {
-    public sealed class PostViewModel
+    public sealed class PostViewModel : IPostViewModel
     {
         public long Id { get; init; }
+        public PostStatus Status { get; init; }
         public DateTime PostedDateTime { get; init; }
         public DateTime UpdatedDateTime { get; init; }
-        public PostStatus Status { get; init; }
         public string Title { get; init; }
 
         public static PostViewModel CreateFromPost(Post post)

@@ -25,9 +25,9 @@ namespace OBFormPost.Application.Test.ViewModel
                 var viewModel = PostViewModel.CreateFromPost(domainModel);
 
                 Assert.Equal(domainModel.Id, viewModel.Id);
-                Assert.Equal(domainModel.PostedDateTime.ToLocalTime().DateTime, viewModel.PostedDateTime);
-                Assert.Equal(domainModel.UpdatedDateTime.ToLocalTime().DateTime, viewModel.UpdateDateTime);
-                Assert.Equal("オープン", viewModel.PostStatus);
+                Assert.Equal(domainModel.PostedDateTime.DateTime, viewModel.PostedDateTime);
+                Assert.Equal(domainModel.UpdatedDateTime.DateTime, viewModel.UpdatedDateTime);
+                Assert.Equal(domainModel.PostStatus, viewModel.Status);
                 Assert.Equal(domainModel.Title, viewModel.Title);
             }
         }

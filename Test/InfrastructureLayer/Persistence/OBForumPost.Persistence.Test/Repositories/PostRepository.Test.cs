@@ -19,7 +19,7 @@ namespace OBForumPost.Persistence.Test.Repositories
     {
         public sealed class GetTest : TestUsingSqlite
         {
-            private readonly PostEntity dummyData = new PostEntity // ID: 1の投稿のみ作成される
+            private readonly PostEntity dummyData = new()
             {
                 PostedDateTime = DateTimeOffset.Parse("2019/12/23 14:00:00 +9:00"),
                 UpdatedDateTime = DateTimeOffset.Parse("2020/2/24 13:00:00 +9:00"),

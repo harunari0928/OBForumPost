@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OBFormPost.Application.ViewModel
+﻿namespace OBFormPost.Application.ViewModel.Posts
 {
-    class PostNotFoundViewModel
+    public class PostNotFoundViewModel : IPostViewModel
     {
     }
 }

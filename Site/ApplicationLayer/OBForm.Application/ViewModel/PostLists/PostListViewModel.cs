@@ -6,21 +6,21 @@ using System.Linq;
 
 namespace OBFormPost.Application.ViewModel
 {
-    public sealed class PostListViewModel : IEnumerable<PostViewModel>
+    public sealed class PostListViewModel : IEnumerable<PostLists.PostViewModel>
     {
-        private readonly IEnumerable<PostViewModel> posts;
+        private readonly IEnumerable<PostLists.PostViewModel> posts;
 
-        PostListViewModel(IEnumerable<PostViewModel> posts)
+        public PostListViewModel(IEnumerable<PostLists.PostViewModel> posts)
         {
             this.posts = posts;
         }
 
         public static PostListViewModel CreateFromPostList(PostList postList)
         {
-            return new PostListViewModel(postList.Select(PostViewModel.CreateFromPost));
+            return new PostListViewModel(postList.Select(PostLists.PostViewModel.CreateFromPost));
         }
 
-        public IEnumerator<PostViewModel> GetEnumerator()
+        public IEnumerator<PostLists.PostViewModel> GetEnumerator()
         {
             foreach (var post in posts)
             {

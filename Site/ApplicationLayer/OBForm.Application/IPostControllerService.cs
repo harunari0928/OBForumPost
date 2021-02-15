@@ -1,10 +1,12 @@
-﻿using OBFormPost.Application.ViewModel;
+﻿using OBFormPost.Application.RequestModel;
+using OBFormPost.Application.ViewModel.Posts;
 using System.Threading.Tasks;
 
 namespace OBFormPost.Application.Service
 {
     public interface IPostControllerService
     {
-        public Task<PostFountViewModel> Get(long postId);
+        Task<IPostViewModel> Get(long postId);
+        Task Create(CreateRequestModel request);
     }
 }

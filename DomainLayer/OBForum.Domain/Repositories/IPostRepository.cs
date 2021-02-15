@@ -1,5 +1,4 @@
 ﻿using OBForumPost.Domain.Posts;
-using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 namespace OBForumPost.Domain.Repository

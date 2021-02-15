@@ -33,9 +33,3 @@ steps:
     command: 'test'
     projects: '**/*.csproj'
     testRunTitle: 'Run Tests'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'XUnit'
-    testResultsFiles: '**/*.trx'
-    mergeTestResults: true

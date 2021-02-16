@@ -7,6 +7,6 @@ namespace OBFormPost.Application.Service
     public interface IPostControllerService
     {
         Task<IPostViewModel> Get(long postId);
-        Task Create(CreateRequestModel request);
+        Task<PostViewModel> Create(CreateRequestModel request);
     }
 }

@@ -25,9 +25,9 @@ namespace OBFormPost.Application.Service.Post
             return PostViewModel.CreateFromPost(post);
         }
 
-        public async Task Create(CreateRequestModel request)
+        public async Task<PostViewModel> Create(CreateRequestModel request)
         {
-            await repository.Create(new OBForumPost.Domain.Posts.Post
+            var post = await repository.Create(new OBForumPost.Domain.Posts.Post
             {
                 PostStatus = (PostStatus)request.Status,
                 PostedDateTime = DateTimeOffset.Now,
@@ -38,6 +38,7 @@ namespace OBFormPost.Application.Service.Post
                     Id = request.AuthorId
                 }
             });
+            return PostViewModel.CreateFromPost(post);
         }
     }
 }

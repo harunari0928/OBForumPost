@@ -62,6 +62,9 @@ namespace OBFormPost.Application.Test.Service.Posts
             public async Task リクエスト通りに投稿を作成すること()
             {
                 var repositoryMock = new Mock<IPostRepository>();
+                repositoryMock
+                   .Setup(x => x.Create(It.IsAny<Post>()))
+                   .ReturnsAsync(new Post());
                 var service = new PostControllerService(repositoryMock.Object);
                 var request = new CreateRequestModel
                 {
@@ -78,6 +81,43 @@ namespace OBFormPost.Application.Test.Service.Posts
                      && y.Author.Id == request.AuthorId
                      )),
                       Times.Once);
+            }
+
+            [Fact]
+            public async Task 作られた投稿が返されること()
+            {
+                var request = new CreateRequestModel
+                {
+                    Status = 0,
+                    Title = "ccc",
+                    AuthorId = 43
+                };
+                var createdPost = new Post
+                {
+                    Id = 100,
+                    PostStatus = (PostStatus)request.Status,
+                    PostedDateTime = DateTimeOffset.Now,
+                    UpdatedDateTime = DateTimeOffset.Now,
+                    Title = request.Title,
+                    Author = new Author
+                    {
+                        Id = request.AuthorId,
+                        Name = "作者"
+                    }
+                };
+                var repositoryMock = new Mock<IPostRepository>();
+                repositoryMock
+                    .Setup(x => x.Create(It.IsAny<Post>()))
+                    .ReturnsAsync(createdPost);
+                var service = new PostControllerService(repositoryMock.Object);
+                
+                var viewModel = await service.Create(request);
+                
+                Assert.Equal(createdPost.Id, viewModel.Id);
+                Assert.Equal(createdPost.PostedDateTime.DateTime, viewModel.PostedDateTime);
+                Assert.Equal(createdPost.UpdatedDateTime.DateTime, viewModel.UpdatedDateTime);
+                Assert.Equal(request.Status, (int)viewModel.Status);
+                Assert.Equal(request.Title, viewModel.Title);
             }
         }
     }

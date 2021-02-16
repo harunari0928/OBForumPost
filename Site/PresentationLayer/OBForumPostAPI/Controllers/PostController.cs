@@ -34,14 +34,14 @@ namespace OBForumPostAPI.Controllers
         }
 
         [Route("create")]
-        [HttpPut]
-        public async Task<ActionResult<IPostViewModel>> Create([FromBody] CreateRequestModel request)
+        [HttpPost]
+        public async Task<ActionResult<PostViewModel>> Create([FromBody] CreateRequestModel request)
         {
             // TODO: 認証バリデーション
             try
             {
-                await postControllerService.Create(request);
-                return Ok();
+                var post = await postControllerService.Create(request);
+                return Ok(post);
             }
             catch (ArgumentException ex)
             {

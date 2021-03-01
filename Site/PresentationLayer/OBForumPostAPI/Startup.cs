@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OBFormPost.Application.Service;
+using OBFormPost.Application.Service.Auth;
 using OBFormPost.Application.Service.Post;
 using OBFormPost.Application.Service.PostList;
 using OBForumPost.Domain.Repository;
@@ -27,6 +28,7 @@ namespace OBForumAPI
         {
             services.AddSingleton<IPostListRepository>(new PostListRepository(new PostContext()));
             services.AddSingleton<IPostRepository>(new PostRepository(new PostContext()));
+            services.AddSingleton<IAuthService, DummyAuthService>(); // TODO: îFèÿAPIÇ™äÆê¨ÇµÇΩÇÁïœçXÇ∑ÇÈ
             services.AddSingleton<IPostListControllerService, PostListControllerService>();
             services.AddSingleton<IPostControllerService, PostControllerService>();
             services.AddControllers().AddJsonOptions(options =>

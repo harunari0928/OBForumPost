@@ -18,9 +18,8 @@ namespace OBForumPostAPI.Controllers
 
         [Route("{page}/{pageSize}")]
         [HttpGet]
-        public async Task<ActionResult<PostListViewModel>> Index(int page, int pageSize)
+        public async Task<ActionResult<PostListViewModel>> Get(int page, int pageSize)
         {
-            // TODO: 認証バリデーション
             try
             {
                 var list = await postListControllerService.Get(page, pageSize);

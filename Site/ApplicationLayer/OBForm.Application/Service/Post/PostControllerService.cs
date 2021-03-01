@@ -1,9 +1,8 @@
 ﻿using OBFormPost.Application.ViewModel.Posts;
 using OBForumPost.Domain.Repository;
 using OBForumPost.Domain.Shared;
-using System.Threading.Tasks;
-using OBFormPost.Application.RequestModel;
 using System;
+using System.Threading.Tasks;
 
 namespace OBFormPost.Application.Service.Post
 {
@@ -39,6 +38,30 @@ namespace OBFormPost.Application.Service.Post
                 }
             });
             return PostViewModel.CreateFromPost(post);
+        }
+
+        public async Task<IPostViewModel> Update(PostViewModel originalPost)
+        {
+            var post = new OBForumPost.Domain.Posts.Post
+            {
+                Id = originalPost.Id,
+                PostStatus = originalPost.Status,
+                PostedDateTime = originalPost.PostedDateTime,
+                UpdatedDateTime = DateTimeOffset.Now,
+                Title = originalPost.Title
+            };
+            await repository.Update(post);
+            var updatedPost = await repository.Get(post.Id);
+            if (updatedPost is null)
+            {
+                return new PostNotFoundViewModel();
+            }
+            return PostViewModel.CreateFromPost(updatedPost);
+        }
+
+        public async Task Remove(long postId)
+        {
+            await repository.Remove(postId);
         }
     }
 }

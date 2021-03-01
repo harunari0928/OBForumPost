@@ -1,4 +1,4 @@
-namespace OBFormPost.Application.RequestModel
+namespace OBFormPost.Application.ViewModel.Posts
 {
     public sealed class CreateRequestModel
     {

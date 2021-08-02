@@ -6,8 +6,7 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ..:/src:cached
-    # TODO: 権限問題で/.tmp-codeフォルダを消せないのでどうにかする
-    command: /bin/bash -c "cp -r /.tmp-code/src/* /src &&
+    command: /bin/bash -c "dotnet build &&
       dotnet ef database update --project /src/InfrastructureLayer/Persistence/OBForumPost.Persistence/OBForumPost.Persistence.csproj &&
       while sleep 1000; do :; done"
     ports:

@@ -9,6 +9,14 @@ COPY . .
 
 RUN dotnet clean
 RUN dotnet restore "OBForumPost.sln"
+RUN dotnet build
 
 RUN dotnet tool install --global dotnet-ef
 ENV PATH $PATH:/root/.dotnet/tools
+
+# docker-compose.ymlの同期設定により、ホストマシン側のbinフォルダの内容でコンテナ側のbinフォルダが上書かれてしまう
+# 回避策として、ソースコード及びビルド成果物を一旦一時ファイルに移動し、
+# ホストマシンとのファイルの同期が終わったあとに、
+# docker-compose.ymlのcommandで退避したファイルを/srcへ流し込む
+WORKDIR /.tmp-code
+RUN cp -r /src /.tmp-code

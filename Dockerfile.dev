@@ -1,7 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0.103
 
-RUN apt update
-
 WORKDIR /src
 EXPOSE 80
 EXPOSE 443
